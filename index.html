@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriPulse Pakistan</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/patterns.css">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="logo">
+            <span>AP</span>
+        </div>
+        <nav class="nav-links" role="navigation" aria-label="Main navigation">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Filter and Search -->
+    <div class="filter-search">
+        <div class="accordion-container">
+            <div class="accordion">
+                <div class="accordion-header">
+                    <h3 class="accordion-title">FILTER BY TOPIC</h3>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <div class="filter-options">
+                            <div class="filter-option" data-topic="all">All Topics</div>
+                            <div class="filter-option" data-topic="agtech">AgTech</div>
+                            <div class="filter-option" data-topic="foodtech">FoodTech</div>
+                            <div class="filter-option" data-topic="biomanufacturing">Biomanufacturing</div>
+                            <div class="filter-option" data-topic="climate">Climate & Sustainability</div>
+                            <div class="filter-option" data-topic="deeptech">DeepTech</div>
+                            <div class="filter-option" data-topic="ai">Artificial Intelligence</div>
+                            <div class="filter-option" data-topic="investing">Investing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="SEARCH" id="searchInput">
+            <button class="search-btn" aria-label="Search" id="searchBtn">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                    <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.71.71l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="search-bar-container" style="display: none;">
+            <input type="text" class="search-bar-enhanced" placeholder="Search articles, topics, and more...">
+            <button class="search-bar-btn" aria-label="Search">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.71.71l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z"/>
+                </svg>
+            </button>
+            <div class="search-suggestions"></div>
+        </div>
+    </div>
+
+    <main id="main-content" class="container" role="main">
+        <!-- Hero Section -->
+        <section class="hero-section" onclick="openArticleModal('modal-article-hero')" style="cursor: pointer;">
+            <div class="hero-content">
+                <h1 class="hero-title">Punjab ramps up climate-smart irrigation to safeguard Rabi crops</h1>
+                <p class="hero-description">New public–private pilots in Punjab and Sindh target efficient water use and resilient yields for farmers across Pakistan.</p>
+                <div class="tags">
+                    <span class="tag biomanufacturing">BIOMANUFACTURING & BIOLOGICALS</span>
+                    <span class="tag deeptech">DEEPTECH</span>
+                </div>
+            </div>
+            <div class="hero-image"></div>
+        </section>
+
+        <!-- Main Content and Sidebar Layout -->
+        <div class="main-layout">
+            <div class="main-content">
+                <!-- Two Column Layout -->
+                <div class="two-column">
+                    <article class="article-card" onclick="openArticleModal('modal-article-1')">
+                        <div class="article-content">
+                            <h2 class="article-title">Agri-data startup digitizes mandi supply chains across Pakistan</h2>
+                            <div class="tags">
+                                <span class="tag ai">ARTIFICIAL INTELLIGENCE</span>
+                                <span class="tag agtech">AGTECH</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-card" onclick="openArticleModal('modal-article-2')">
+                        <div class="article-content">
+                            <h2 class="article-title">KPK farmers test virtual fencing for rangeland health</h2>
+                            <div class="article-image" style="background-image: url('assets/images/farmer.jpg')"></div>
+                            <div class="tags">
+                                <span class="tag agtech">AGTECH</span>
+                                <span class="tag climate">CLIMATE & SUSTAINABILITY</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Editor's Pick Section -->
+                <section class="editors-pick" onclick="openArticleModal('modal-article-editors-pick')" style="cursor: pointer;">
+                    <div class="editors-pick-header">EDITOR'S PICK</div>
+                    <div class="editors-pick-content">
+                        <div class="editors-pick-text">
+                            <h2 class="editors-pick-title">Pakistan's agri-food innovation ecosystem reaches new heights</h2>
+                            <p>From precision agriculture to sustainable packaging, Pakistani startups are transforming the food and agriculture landscape with cutting-edge technology and innovative solutions.</p>
+                        </div>
+                        <div class="editors-pick-image"></div>
+                    </div>
+                </section>
+
+                <!-- Grid Layout -->
+                <div class="grid-layout">
+                    <div class="grid-item" onclick="openArticleModal('modal-article-3')">
+                        <div class="grid-image" style="background-image: url('assets/images/bio.jpg')"></div>
+                        <h3 class="grid-title">Agri-waste to bio-based packaging gains traction</h3>
+                        <p class="grid-description">Pakistani startups are turning agricultural waste into sustainable packaging materials, reducing environmental impact while creating new revenue streams for farmers.</p>
+                        <div class="grid-tags">
+                            <span class="grid-tag">BIOMANUFACTURING & BIOLOGICALS</span>
+                            <span class="grid-tag">CLIMATE & SUSTAINABILITY</span>
+                        </div>
+                    </div>
+                    <div class="grid-item" onclick="openArticleModal('modal-article-4')">
+                        <div class="grid-image" style="background-image: url('assets/images/cow.jpg')"></div>
+                        <h3 class="grid-title">Livestock traceability pilots roll out in Balochistan</h3>
+                        <p class="grid-description">New blockchain-based systems enable farmers to track livestock from farm to market, improving food safety and market access.</p>
+                        <div class="grid-tags">
+                            <span class="grid-tag">AGTECH</span>
+                            <span class="grid-tag">FOODTECH</span>
+                        </div>
+                    </div>
+                    <div class="grid-item" onclick="openArticleModal('modal-article-5')">
+                        <div class="grid-image" style="background-image: url('assets/images/tracktor.jpg')"></div>
+                        <h3 class="grid-title">Pakistan expands guar processing to boost value-added exports</h3>
+                        <p class="grid-description">New processing facilities in Sindh and Punjab are transforming raw guar into high-value products for international markets.</p>
+                        <div class="grid-tags">
+                            <span class="grid-tag">FOODTECH</span>
+                            <span class="grid-tag">INVESTING</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Grid Layout -->
+                <div class="text-grid-layout">
+                    <div class="text-grid-item" onclick="openArticleModal('modal-article-6')" style="cursor: pointer;">
+                        <h3 class="text-grid-title">Climate-smart agriculture adoption accelerates in Punjab</h3>
+                        <p class="text-grid-description">Farmers are increasingly adopting precision irrigation and soil health monitoring technologies to combat climate change impacts.</p>
+                    </div>
+                    <div class="text-grid-item" onclick="openArticleModal('modal-article-7')" style="cursor: pointer;">
+                        <h3 class="text-grid-title">Sindh launches digital marketplace for smallholder farmers</h3>
+                        <p class="text-grid-description">New platform connects farmers directly with buyers, reducing middlemen and improving profit margins.</p>
+                    </div>
+                    <div class="text-grid-item" onclick="openArticleModal('modal-article-8')" style="cursor: pointer;">
+                        <h3 class="text-grid-title">KPK invests in vertical farming infrastructure</h3>
+                        <p class="text-grid-description">Provincial government supports urban agriculture initiatives to address food security challenges in mountainous regions.</p>
+                    </div>
+                </div>
+
+                <!-- Tables Section -->
+                <section class="dashboard-section">
+                    <h3 class="dashboard-section-title">Top Agri-Food Startups in Pakistan</h3>
+                    <div class="data-table-container">
+                        <table class="data-table data-table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Startup Name</th>
+                                    <th>Category</th>
+                                    <th>Location</th>
+                                    <th>Funding</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AgriData Solutions</td>
+                                    <td>AgTech</td>
+                                    <td>Lahore</td>
+                                    <td>$2.5M</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td>FarmConnect</td>
+                                    <td>FoodTech</td>
+                                    <td>Karachi</td>
+                                    <td>$1.8M</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td>GreenPak Packaging</td>
+                                    <td>Biomanufacturing</td>
+                                    <td>Islamabad</td>
+                                    <td>$3.2M</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td>ClimateSmart Agri</td>
+                                    <td>Climate Tech</td>
+                                    <td>Punjab</td>
+                                    <td>$1.5M</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td>Vertical Farms PK</td>
+                                    <td>AgTech</td>
+                                    <td>KPK</td>
+                                    <td>$900K</td>
+                                    <td>Active</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Lists Section -->
+                <section class="dashboard-section">
+                    <h3 class="dashboard-section-title">Key Innovation Areas</h3>
+                    <div class="data-list data-list-ordered">
+                        <div class="data-list-item">
+                            <div class="data-list-item-content">
+                                <div class="data-list-item-title">Precision Agriculture</div>
+                                <div class="data-list-item-description">IoT sensors, drones, and AI for optimized farming</div>
+                            </div>
+                        </div>
+                        <div class="data-list-item">
+                            <div class="data-list-item-content">
+                                <div class="data-list-item-title">Sustainable Packaging</div>
+                                <div class="data-list-item-description">Bio-based materials from agricultural waste</div>
+                            </div>
+                        </div>
+                        <div class="data-list-item">
+                            <div class="data-list-item-content">
+                                <div class="data-list-item-title">Supply Chain Digitization</div>
+                                <div class="data-list-item-description">Blockchain and digital marketplaces</div>
+                            </div>
+                        </div>
+                        <div class="data-list-item">
+                            <div class="data-list-item-content">
+                                <div class="data-list-item-title">Climate-Smart Solutions</div>
+                                <div class="data-list-item-description">Water management and resilient crops</div>
+                            </div>
+                        </div>
+                        <div class="data-list-item">
+                            <div class="data-list-item-content">
+                                <div class="data-list-item-title">Vertical Farming</div>
+                                <div class="data-list-item-description">Urban agriculture and controlled environments</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Additional Accordions -->
+                <section class="dashboard-section">
+                    <h3 class="dashboard-section-title">Frequently Asked Questions</h3>
+                    <div class="data-accordion-container">
+                        <div class="data-accordion">
+                            <div class="data-accordion-header">
+                                <h4 class="data-accordion-title">What topics does AgriPulse Pakistan cover?</h4>
+                                <span class="data-accordion-icon">▼</span>
+                            </div>
+                            <div class="data-accordion-content">
+                                <div class="data-accordion-body">
+                                    <p>We cover AgTech, FoodTech, Biomanufacturing & Biologicals, Climate & Sustainability, DeepTech, and Investment & Funding in Pakistan's agriculture sector.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-accordion">
+                            <div class="data-accordion-header">
+                                <h4 class="data-accordion-title">How often is content updated?</h4>
+                                <span class="data-accordion-icon">▼</span>
+                            </div>
+                            <div class="data-accordion-content">
+                                <div class="data-accordion-body">
+                                    <p>We publish daily news coverage of Pakistan's agri-food startups, funding rounds, and technological innovations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-accordion">
+                            <div class="data-accordion-header">
+                                <h4 class="data-accordion-title">Can I submit news tips?</h4>
+                                <span class="data-accordion-icon">▼</span>
+                            </div>
+                            <div class="data-accordion-content">
+                                <div class="data-accordion-body">
+                                    <p>Yes! You can submit news tips by emailing tips@agripulse.pk or using our contact form. We review all tips and may follow up if we decide to pursue the story.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="newsletter-card">
+                    <h3 class="newsletter-title">Stay Updated
+                        <span class="tooltip-container">
+                            <span class="tooltip-icon">?</span>
+                            <span class="tooltip">Get weekly updates on Pakistan's agri-food innovation news</span>
+                        </span>
+                    </h3>
+                    <p class="newsletter-description">Get the latest news on Pakistan's agri-food innovation ecosystem delivered to your inbox.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" class="newsletter-input" placeholder="Email Address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+
+                <!-- Dashboard Section -->
+                <div class="dashboard">
+                    <div class="dashboard-header">
+                        <h3 class="dashboard-title">Quick Stats</h3>
+                        <p class="dashboard-subtitle">Pakistan's Agri-Food Innovation</p>
+                    </div>
+                    <div class="dashboard-grid">
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">150+</div>
+                            <div class="dashboard-stat-label">Startups</div>
+                        </div>
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">$50M+</div>
+                            <div class="dashboard-stat-label">Funding</div>
+                        </div>
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">25+</div>
+                            <div class="dashboard-stat-label">Provinces</div>
+                        </div>
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">12+</div>
+                            <div class="dashboard-stat-label">Categories</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Cards -->
+                <div class="data-card-grid">
+                    <div class="data-card">
+                        <div class="data-card-header">
+                            <h4 class="data-card-title">Latest News</h4>
+                            <div class="data-card-icon">📰</div>
+                        </div>
+                        <div class="data-card-content">
+                            <p>Stay updated with the latest developments in Pakistan's agri-food innovation ecosystem.</p>
+                        </div>
+                    </div>
+                    <div class="data-card">
+                        <div class="data-card-header">
+                            <h4 class="data-card-title">Trending Topics</h4>
+                            <div class="data-card-icon">🔥</div>
+                        </div>
+                        <div class="data-card-content">
+                            <p>Explore the most popular topics in AgTech, FoodTech, and sustainable agriculture.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ad-space">Advertisement Space</div>
+                <div class="ad-space">Advertisement Space</div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Ticker Strip -->
+    <div class="ticker-strip" aria-label="Latest highlights ticker">
+        <div class="ticker-track">
+            <span class="ticker-item">Pakistan Agrifood</span>
+            <span class="ticker-sep">\</span>
+            <span class="ticker-item">Reporting on Pakistan's food & agriculture</span>
+            <span class="ticker-sep">\</span>
+            <span class="ticker-item">DeepTech Pakistan</span>
+            <span class="ticker-sep">\</span>
+            <span class="ticker-item">AgTech Pakistan</span>
+            <span class="ticker-sep">\</span>
+            <span class="ticker-item">Biomanufacturing & Biologicals Pakistan</span>
+            <span class="ticker-sep">\</span>
+            <span class="ticker-item">Climate & Sustainability Pakistan</span>
+            <span class="ticker-sep">\</span>
+            <span class="ticker-item">FoodTech Pakistan</span>
+            <span class="ticker-sep">\</span>
+            <span class="ticker-item">Investing in Pakistan</span>
+            <span class="ticker-sep">\</span>
+            <span class="ticker-item">Punjab</span>
+            <span class="ticker-sep">\</span>
+            <span class="ticker-item">Sindh</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About AgriPulse Pakistan</h3>
+                <p>We are Pakistan's leading source for agri-food innovation news, covering startups, technology, and investment in the country's growing food and agriculture sector.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="contact.html">Contact</a></p>
+                <p><a href="#" onclick="openArticleModal('modal-privacy-policy'); return false;">Privacy Policy</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p>Stay connected with the latest updates from Pakistan's agri-food ecosystem.</p>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+            <a href="#" aria-label="Email">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                    <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+                    <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+                </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="footer-terms">
+            <p>© 2024 AgriPulse Pakistan. All rights reserved. | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+
+        <div class="disclaimer">
+            <p>AgriPulse Pakistan is an independent publication covering Pakistan's agri-food innovation ecosystem. All content is for informational purposes only.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Dialogs for Articles -->
+    <div id="modal-article-1" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Agri-data startup digitizes mandi supply chains across Pakistan</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <p>A groundbreaking agri-data startup has launched a comprehensive digital platform to transform Pakistan's traditional mandi (market) supply chains. The innovative solution connects farmers directly with buyers, eliminating multiple intermediaries and ensuring fair pricing.</p>
+                    <p>The platform uses advanced data analytics to provide real-time market information, helping farmers make informed decisions about when and where to sell their produce. This digital transformation is expected to significantly reduce post-harvest losses and improve farmer incomes across Punjab, Sindh, and KPK provinces.</p>
+                    <p>Early pilot programs in Lahore and Karachi have shown promising results, with participating farmers reporting 15-20% increase in net profits. The startup has secured funding from local and international investors to expand operations nationwide.</p>
+                </div>
+                <div class="modal-tags">
+                    <span class="tag ai">ARTIFICIAL INTELLIGENCE</span>
+                    <span class="tag agtech">AGTECH</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-article-2" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">KPK farmers test virtual fencing for rangeland health</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image" style="background-image: url('assets/images/farmer.jpg')"></div>
+                <div class="modal-content">
+                    <p>Farmers in Khyber Pakhtunkhwa are piloting innovative virtual fencing technology to manage livestock grazing and improve rangeland health. This GPS-based system uses collars on livestock to create virtual boundaries, preventing overgrazing in sensitive areas.</p>
+                    <p>The technology allows farmers to remotely control where their animals graze, protecting biodiversity and ensuring sustainable land use. Initial results show improved vegetation cover and reduced soil erosion in test areas.</p>
+                    <p>This initiative is part of a larger effort to modernize livestock management in Pakistan's mountainous regions, combining traditional knowledge with cutting-edge technology.</p>
+                </div>
+                <div class="modal-tags">
+                    <span class="tag agtech">AGTECH</span>
+                    <span class="tag climate">CLIMATE & SUSTAINABILITY</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-article-3" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Agri-waste to bio-based packaging gains traction</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image" style="background-image: url('assets/images/bio.jpg')"></div>
+                <div class="modal-content">
+                    <p>Pakistani startups are revolutionizing the packaging industry by converting agricultural waste into sustainable, biodegradable materials. Rice husks, wheat straw, and sugarcane bagasse are being transformed into eco-friendly packaging solutions.</p>
+                    <p>These innovations address both environmental concerns and economic opportunities for farmers, who can now monetize what was previously considered waste. The bio-based packaging materials are fully compostable and offer comparable performance to traditional plastics.</p>
+                    <p>Several companies have secured partnerships with major food brands in Pakistan, signaling a shift toward more sustainable packaging practices in the agri-food sector.</p>
+                </div>
+                <div class="modal-tags">
+                    <span class="tag biomanufacturing">BIOMANUFACTURING & BIOLOGICALS</span>
+                    <span class="tag climate">CLIMATE & SUSTAINABILITY</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-article-4" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Livestock traceability pilots roll out in Balochistan</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image" style="background-image: url('assets/images/cow.jpg')"></div>
+                <div class="modal-content">
+                    <p>Blockchain-based livestock traceability systems are being piloted in Balochistan to improve food safety and market access for local farmers. The system tracks animals from birth to market, recording health information, vaccinations, and movement history.</p>
+                    <p>This transparency enables farmers to access premium markets and ensures consumers receive safe, quality meat products. The technology also helps prevent livestock theft and supports better disease management.</p>
+                    <p>The pilot program has received positive feedback from both farmers and consumers, with plans to expand to other provinces in the coming year.</p>
+                </div>
+                <div class="modal-tags">
+                    <span class="tag agtech">AGTECH</span>
+                    <span class="tag foodtech">FOODTECH</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-article-5" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Pakistan expands guar processing to boost value-added exports</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image" style="background-image: url('assets/images/tracktor.jpg')"></div>
+                <div class="modal-content">
+                    <p>New processing facilities in Sindh and Punjab are transforming Pakistan's guar production, converting raw guar into high-value products for international markets. The facilities process guar gum, which is used in food, pharmaceutical, and industrial applications.</p>
+                    <p>This value addition is expected to significantly increase export revenues and create employment opportunities in rural areas. The processed products command premium prices compared to raw guar, benefiting both farmers and the national economy.</p>
+                    <p>Investment in processing infrastructure represents a strategic shift toward value-added agriculture, aligning with Pakistan's goal of increasing agricultural exports.</p>
+                </div>
+                <div class="modal-tags">
+                    <span class="tag foodtech">FOODTECH</span>
+                    <span class="tag investing">INVESTING</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Article Modals -->
+    <div id="modal-article-hero" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Punjab ramps up climate-smart irrigation to safeguard Rabi crops</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <p>The Punjab government has launched ambitious climate-smart irrigation initiatives to protect Rabi season crops from increasingly unpredictable weather patterns. These new public-private partnerships aim to revolutionize water management across the province's agricultural sector.</p>
+                    <p>The program includes the deployment of precision irrigation systems, soil moisture sensors, and AI-powered water management platforms. Farmers in pilot districts are reporting significant water savings of up to 30% while maintaining or improving crop yields.</p>
+                    <p>Similar initiatives are being tested in Sindh, where water scarcity poses an even greater challenge. The programs focus on efficient water use, resilient crop varieties, and sustainable farming practices that can withstand climate variability.</p>
+                    <p>This represents a major shift toward technology-driven agriculture in Pakistan, with the potential to transform how farmers manage resources and adapt to climate change. The success of these pilots could serve as a model for nationwide implementation.</p>
+                </div>
+                <div class="modal-tags">
+                    <span class="tag biomanufacturing">BIOMANUFACTURING & BIOLOGICALS</span>
+                    <span class="tag deeptech">DEEPTECH</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-article-editors-pick" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Pakistan's agri-food innovation ecosystem reaches new heights</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image" style="background-image: url('assets/images/Revol-Greens-lettuce.jpg'); height: 300px; margin-bottom: 20px;"></div>
+                <div class="modal-content">
+                    <p>Pakistan's agri-food innovation ecosystem is experiencing unprecedented growth, with startups and technology companies transforming every aspect of the food and agriculture sector. From precision agriculture to sustainable packaging, the country is witnessing a technological revolution in farming and food production.</p>
+                    <p>Pakistani startups are leveraging cutting-edge technology to address critical challenges in agriculture, including water scarcity, climate change, food security, and supply chain inefficiencies. These innovations are creating new opportunities for farmers while improving productivity and sustainability.</p>
+                    <p>Key areas of innovation include:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Precision agriculture and IoT-based farm management</li>
+                        <li>Sustainable packaging from agricultural waste</li>
+                        <li>Blockchain-based supply chain traceability</li>
+                        <li>AI-powered crop monitoring and disease detection</li>
+                        <li>Vertical farming and urban agriculture solutions</li>
+                        <li>Climate-smart irrigation technologies</li>
+                    </ul>
+                    <p style="margin-top: 15px;">The ecosystem is attracting significant investment from both local and international sources, signaling strong confidence in Pakistan's agricultural innovation potential. This growth is creating jobs, improving farmer livelihoods, and positioning Pakistan as a leader in agri-tech innovation in the region.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-article-6" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Climate-smart agriculture adoption accelerates in Punjab</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <p>Farmers across Punjab are rapidly adopting climate-smart agriculture practices, with precision irrigation and soil health monitoring technologies becoming increasingly common. This shift is driven by growing awareness of climate change impacts and the need for sustainable farming methods.</p>
+                    <p>Precision irrigation systems allow farmers to apply water exactly where and when crops need it, reducing waste and improving efficiency. Soil health monitoring technologies provide real-time data on nutrient levels, moisture content, and soil conditions, enabling data-driven decision making.</p>
+                    <p>These technologies are helping farmers combat the effects of climate change, including irregular rainfall patterns, increased temperatures, and water scarcity. Early adopters are reporting improved crop yields, reduced input costs, and better resilience to weather variability.</p>
+                    <p>The provincial government is supporting this transition through subsidies, training programs, and partnerships with technology providers. This support is making climate-smart technologies more accessible to smallholder farmers, who represent the majority of Pakistan's agricultural sector.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-article-7" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Sindh launches digital marketplace for smallholder farmers</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <p>The Sindh government has launched a revolutionary digital marketplace platform designed to connect smallholder farmers directly with buyers, eliminating traditional middlemen and improving profit margins. This initiative aims to empower farmers and create more transparent agricultural markets.</p>
+                    <p>The platform enables farmers to list their produce, set prices, and connect with buyers including retailers, processors, and exporters. Real-time market information helps farmers make informed decisions about when and where to sell their crops.</p>
+                    <p>By removing intermediaries, farmers can receive up to 25% higher prices for their produce, while buyers benefit from direct access to quality products and transparent pricing. The platform also includes features for logistics coordination, payment processing, and quality verification.</p>
+                    <p>Early results show significant improvements in farmer incomes and market access, particularly for smallholder farmers who previously had limited bargaining power. The success of this initiative in Sindh could serve as a model for other provinces.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-article-8" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">KPK invests in vertical farming infrastructure</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <p>The Khyber Pakhtunkhwa provincial government is making significant investments in vertical farming infrastructure to address food security challenges in the region's mountainous terrain. This innovative approach to agriculture is particularly suited to KPK's geography and climate conditions.</p>
+                    <p>Vertical farming systems use controlled environments, LED lighting, and hydroponic or aeroponic growing methods to produce crops year-round, regardless of weather conditions. This technology is especially valuable in mountainous regions where traditional farming faces challenges from terrain and climate.</p>
+                    <p>The initiative includes the establishment of vertical farming facilities in urban areas, providing fresh produce to local communities while reducing transportation costs and food miles. These facilities can produce crops using up to 95% less water than traditional farming methods.</p>
+                    <p>This investment is part of a broader strategy to modernize agriculture in KPK and improve food security. The provincial government is also providing training and support to local entrepreneurs interested in establishing vertical farming operations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Subscription Success Modal -->
+    <div id="modal-newsletter-success" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Successfully Subscribed!</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content" style="text-align: center;">
+                    <div style="font-size: 48px; color: #27ae60; margin-bottom: 20px;">✓</div>
+                    <p><strong>Thank you for subscribing to AgriPulse Pakistan!</strong></p>
+                    <p>You will now receive weekly updates on Pakistan's agri-food innovation ecosystem delivered directly to your inbox.</p>
+                    <p style="margin-top: 20px; color: #666;">Check your email for a confirmation message. If you don't see it, please check your spam folder.</p>
+                    <p style="margin-top: 15px; color: #666;">Stay informed about the latest developments in AgTech, FoodTech, and agricultural innovation across Pakistan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="modal-privacy-policy" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Privacy Policy</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <h3 style="color: #333; margin-bottom: 15px;">AgriPulse Pakistan Privacy Policy</h3>
+                    <p><strong>Last Updated:</strong> 2024</p>
+                    
+                    <h4 style="color: #333; margin-top: 20px; margin-bottom: 10px;">Information We Collect</h4>
+                    <p>We collect information that you provide directly to us, including:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Name and contact information when you subscribe to our newsletter</li>
+                        <li>Information provided when you contact us through our contact form</li>
+                        <li>Usage data and analytics to improve our website</li>
+                    </ul>
+
+                    <h4 style="color: #333; margin-top: 20px; margin-bottom: 10px;">How We Use Your Information</h4>
+                    <p>We use the information we collect to:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Send you newsletters and updates about agri-food innovation</li>
+                        <li>Respond to your inquiries and requests</li>
+                        <li>Improve our website and services</li>
+                        <li>Analyze website usage and trends</li>
+                    </ul>
+
+                    <h4 style="color: #333; margin-top: 20px; margin-bottom: 10px;">Data Protection</h4>
+                    <p>We implement appropriate security measures to protect your personal information. However, no method of transmission over the internet is 100% secure.</p>
+
+                    <h4 style="color: #333; margin-top: 20px; margin-bottom: 10px;">Your Rights</h4>
+                    <p>You have the right to:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Access your personal information</li>
+                        <li>Request correction of inaccurate data</li>
+                        <li>Request deletion of your data</li>
+                        <li>Unsubscribe from our newsletter at any time</li>
+                    </ul>
+
+                    <p style="margin-top: 20px;"><strong>Contact Us:</strong> For questions about this privacy policy, please contact us at <a href="mailto:info@agripulse.pk" style="color: #333;">info@agripulse.pk</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Onboarding Tutorial -->
+    <div class="onboarding-overlay">
+        <div class="onboarding-tutorial">
+            <button class="onboarding-close" aria-label="Close">&times;</button>
+            <h3>Welcome to AgriPulse Pakistan! 👋</h3>
+            <p>Let's take a quick tour to help you get started:</p>
+            <ul>
+                <li><strong>Click on article cards</strong> to read full articles in modal dialogs</li>
+                <li><strong>Use the search bar</strong> to find specific topics</li>
+                <li><strong>Filter by topic</strong> using the accordion menu</li>
+                <li><strong>Subscribe to our newsletter</strong> for weekly updates</li>
+                <li><strong>Chat with our bot</strong> if you need help (bottom right)</li>
+            </ul>
+            <div class="onboarding-actions">
+                <button class="onboarding-btn onboarding-btn-secondary onboarding-skip">Skip</button>
+                <button class="onboarding-btn onboarding-btn-primary onboarding-next">Next</button>
+            </div>
+        </div>
+        <div class="onboarding-tutorial" style="display: none;">
+            <button class="onboarding-close" aria-label="Close">&times;</button>
+            <h3>Explore Our Content 📰</h3>
+            <p>Our website features:</p>
+            <ul>
+                <li><strong>Latest News:</strong> Stay updated with Pakistan's agri-food innovation</li>
+                <li><strong>In-depth Articles:</strong> Click any article for detailed information</li>
+                <li><strong>Team Profiles:</strong> Learn about our editorial team on the About page</li>
+                <li><strong>Contact Options:</strong> Multiple ways to reach us on the Contact page</li>
+            </ul>
+            <div class="onboarding-actions">
+                <button class="onboarding-btn onboarding-btn-secondary onboarding-prev">Previous</button>
+                <button class="onboarding-btn onboarding-btn-primary onboarding-next">Get Started</button>
+            </div>
+        </div>
+        <div class="onboarding-indicator">
+            <span class="onboarding-dot active"></span>
+            <span class="onboarding-dot"></span>
+        </div>
+    </div>
+
+    <!-- Help Section -->
+    <div class="help-section" style="max-width: 1200px; margin: 20px auto; padding: 20px;">
+        <h4>
+            <span class="help-icon">?</span>
+            Need Help?
+        </h4>
+        <p>New to our website? Check out our <strong>onboarding tutorial</strong> that appears automatically, or use the <strong>chatbot</strong> in the bottom right corner for instant assistance. You can also click the help icons <span class="help-icon">?</span> throughout the site for contextual information.</p>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-button" aria-label="Open chatbot">
+            💬
+            <span class="chatbot-notification" style="display: none;">1</span>
+        </button>
+        <div class="chatbot-window">
+            <div class="chatbot-header">
+                <h3>AgriPulse Assistant</h3>
+                <button class="chatbot-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="chatbot-messages">
+                <div class="chatbot-message bot">
+                    <div class="chatbot-message-content">Hello! I'm here to help you with questions about AgriPulse Pakistan. How can I assist you today?</div>
+                </div>
+            </div>
+            <div class="chatbot-quick-replies">
+                <div class="chatbot-quick-reply">Contact Info</div>
+                <div class="chatbot-quick-reply">About Us</div>
+                <div class="chatbot-quick-reply">Subscribe</div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" class="chatbot-input" placeholder="Type your message...">
+                <button class="chatbot-send" aria-label="Send">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/patterns.js"></script>
+    <script>
+        // Newsletter form handler with modal
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                openArticleModal('modal-newsletter-success');
+                this.reset();
+            }
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.filter-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                const topic = this.getAttribute('data-topic');
+                Snackbar.info(`Filtering by: ${topic === 'all' ? 'All Topics' : topic}`);
+            });
+        });
+
+        // Search functionality
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            const query = document.getElementById('searchInput').value;
+            if (query.trim()) {
+                Snackbar.info(`Searching for: ${query}`);
+            }
+        });
+
+        // Function to open article modals
+        function openArticleModal(modalId) {
+            window.ModalDialog.open(modalId);
+        }
+    </script>
+</body>
+</html>
